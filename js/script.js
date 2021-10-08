@@ -17,20 +17,24 @@ let userAge = parseInt(prompt("inserisci la tua età"));
 
 let tripPrice = tripLenght * 0.21;
 
-let prezzoScontato;
+let discountedPrice;
+
+let msgDiscounted = "il prezzo del tuo biglietto scontato è di €"
+
+let msgFullPrice = "il prezzo del tuo biglietto è di €"
 
 if (isNaN(userAge)) {
     alert("il valore inserito non è valido");
 } else {
     if (userAge < 18) {
-        prezzoScontato = tripPrice - (tripPrice * 0.2);
-        alert("il prezzo del tuo biglietto è " + prezzoScontato.toFixed(2));
+        discountedPrice = tripPrice - (tripPrice * 0.2);
+        alert(msgDiscounted + discountedPrice.toFixed(2));
     } else if (userAge >= 65) {
-        prezzoScontato = tripPrice - (tripPrice * 0.4);
-        alert("il prezzo del tuo biglietto scontato è di:" + prezzoScontato.toFixed(2));
+        discountedPrice = tripPrice - (tripPrice * 0.4);
+        alert(msgDiscounted + discountedPrice.toFixed(2));
 
     } else {
-        alert("il prezzo del tuo biglietto scontato è di:" + tripPrice.toFixed(2));
+        alert(msgDiscounted + tripPrice.toFixed(2));
     }
 }
 
